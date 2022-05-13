@@ -14,7 +14,7 @@ function UpdateUser({close, user, users, setUsers, index}) {
       alert('fields cant be empty')
       return
     }
-    await fetch('http://localhost:5000/api/test1/user/'+user._id, {
+    await fetch('https://night-marketer-test-backend.herokuapp.com/api/test1/user/'+user._id, {
         method:"POST", 
         headers: {
             'Accept': 'application/json, text/plain, */*',

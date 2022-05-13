@@ -38,7 +38,7 @@ function Home() {
   }
 
   const getUsers = async () => {
-    await fetch('http://localhost:5000/api/test1/users/'+currentPage)
+    await fetch('https://night-marketer-test-backend.herokuapp.com/api/test1/users/'+currentPage)
     .then(res => res.json())
     .then(result => {
         setLoading(false)
@@ -51,7 +51,7 @@ function Home() {
 
 const getMoreUsers = () => {
     setTimeout( async() => 
-    {await fetch('http://localhost:5000/api/test1/users/'+currentPage)
+    {await fetch('https://night-marketer-test-backend.herokuapp.com/api/test1/users/'+currentPage)
     .then(res => res.json())
     .then(result => {
         setLoading(false)
@@ -63,7 +63,7 @@ const getMoreUsers = () => {
   }
 
   const deleteUser = async (id) => {
-      await fetch('http://localhost:5000/api/test1/users/'+id, {method: 'DELETE'})
+      await fetch('https://night-marketer-test-backend.herokuapp.com/api/test1/users/'+id, {method: 'DELETE'})
       .then(res => res.json())
       .then(result => setUsers(users.filter(user => user._id !== result._id )))
       .catch(err => console.log(err))
